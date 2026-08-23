@@ -319,7 +319,8 @@ def patchedSetRoot(self, root, justSet=False):
         self.servicelist.setRoot(root, True)
         fillChannels(self, filepath)
         self.rootChanged = True
-        self.buildTitleString()
+        # OpenViX names this buildTitleString(); OpenATV names it buildTitle().
+        (self.buildTitleString if hasattr(self, "buildTitleString") else self.buildTitle)()
         return
     _originalSetRoot(self, root, justSet)
     if not justSet and self.mode == MODE_TV and "FROM PROVIDERS" in root.getPath():

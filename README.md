@@ -22,7 +22,7 @@ This plugin aims at integrating IPTV services seamlessly into the DVB service ar
 ## How it works
 ISC scans `/etc/enigma2/channellist*.m3u8` for playlists and lists each one as a "provider" in the channel selection, right alongside your regular bouquets/providers. Opening a provider shows its channels; playing or favouriting one works exactly like a normal service.
 
-Unlike a plain M3U bouquet import, a channel entry never stores today's stream URL directly - it stores a reference to (provider file, `tvg-id`). The actual URL is looked up fresh from the playlist file at the moment you tune in or start a recording. That means:
+Unlike a plain M3U8 bouquet import, a channel entry never stores today's stream URL directly - it stores a reference to (provider file, `tvg-id`). The actual URL is looked up fresh from the playlist file at the moment you tune in or start a recording. That means:
 - Updating/re-downloading a provider's `.m3u8` file to refresh rotated URLs doesn't require touching your favourites - they keep working.
 - If a channel is removed from the playlist, the favourite simply fails to play, the same way a DVB favourite fails when its transponder no longer carries that service.
 
@@ -31,8 +31,7 @@ Unlike a plain M3U bouquet import, a channel entry never stores today's stream U
 2. Restart Enigma2 (or the plugin) so it picks up the new file(s).
 3. Open channel selection and select "Providers" to browse the IPTV channels; add channels to your favourites the same way you would a DVB service.
 
-## Limitations
-- The plugin supports OpenViX and compatible distributions.
+This repository has no control over the streams, links, or the legality of the content provided by the different hosts (including all mirror sites). It is the end user's responsibility to ensure the legal use of these streams, and we strongly recommend verifying that the content complies with all applicable laws, including copyright laws and regulations of your country's jurisdiction before use.
 
 ## Disclaimer
 The project author is not responsible for how this software is used by others. It is not intended to be used for accessing or distributing copyrighted materials without authorization.
@@ -40,5 +39,8 @@ Users are solely responsible for determining the legality of their actions.
 
 This repository has no control over the streams, links, or the legality of the content provided by the different hosts (including all mirror sites). It is the end user's responsibility to ensure the legal use of these streams, and we strongly recommend verifying that the content complies with all applicable laws, including copyright laws and regulations of your country's jurisdiction before use.
 
+## Limitations
+- Tested on OpenViX and OpenATV with DM900.
+
 ## Links
-- Installation: https://OpenCockpit.github.io/IPTVServiceCockpit
+- Installation: https://xcentaurix.github.io/IPTVServiceCockpit

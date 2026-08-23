@@ -6,7 +6,7 @@ from Plugins.Plugin import PluginDescriptor
 from .Debug import logger
 from .Version import VERSION
 from .IPTVServiceCockpit import IPTVServiceCockpit
-from .ConfigInit import ConfigInit
+from . import ConfigInit  # noqa: F401, pylint: disable=unused-import
 from .M3U8Providers import installServiceExtensions, writeEPGImportConfig
 
 
@@ -29,7 +29,6 @@ def sessionStart(reason, session, **__):  # pylint: disable=unused-argument
 
 
 def Plugins(**__):
-    ConfigInit()
     return [
         PluginDescriptor(
             where=[

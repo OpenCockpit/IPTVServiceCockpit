@@ -1,4 +1,4 @@
-# Copyright (C) 2026 by xcentaurix
+# Copyright (C) 2018-2026 by xcentaurix
 # License: GNU General Public License v3.0
 
 
@@ -35,3 +35,6 @@ def setLogLevel(level):
     logger.setLevel(level)
     streamer.setLevel(level)
     logger.info("level: %s", level)
+
+
+initLogging()
