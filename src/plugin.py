@@ -34,12 +34,14 @@ def Plugins(**__):
             where=[
                 PluginDescriptor.WHERE_AUTOSTART
             ],
-            fnc=autoStart
+            fnc=autoStart,
+            needsRestart=True
         ),
         PluginDescriptor(
             where=[
                 PluginDescriptor.WHERE_SESSIONSTART
             ],
-            fnc=sessionStart
+            fnc=sessionStart,
+            needsRestart=True
         )
     ]
